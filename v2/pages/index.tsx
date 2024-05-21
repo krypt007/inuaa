@@ -4,7 +4,7 @@ import { NextPage } from "next";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 import { getUser } from "./api/auth/[...thirdweb]";
-import Worker from "../components/Worker";
+// import Worker from "../components/Worker";
 // import Businesses from "../components/Businesses";
 
 const Home: NextPage = () => {
@@ -30,7 +30,7 @@ const Home: NextPage = () => {
         flexDirection: "row",
         width: "100%",
       }}>
-        <Worker />
+        {/* <Worker /> */}
         {/* <Businesses /> */}
       </div>
     </div>
