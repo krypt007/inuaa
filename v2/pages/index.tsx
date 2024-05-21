@@ -5,7 +5,7 @@ import { useEffect } from "react";
 import { useRouter } from "next/router";
 import { getUser } from "./api/auth/[...thirdweb]";
 import Worker from "../components/Worker";
-import Businesses from "../components/Businesses";
+// import Businesses from "../components/Businesses";
 
 const Home: NextPage = () => {
   // Check if the user is logged in
@@ -31,7 +31,7 @@ const Home: NextPage = () => {
         width: "100%",
       }}>
         <Worker />
-        <Businesses />
+        {/* <Businesses /> */}
       </div>
     </div>
   );
