@@ -15,6 +15,8 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         THIRDWE_ENGINE_WALLET,
     } = process.env;
 
+    const CHAIN_ID = "97";
+
     try {
         // Check if environment variables are set
         // If not, throw an error
@@ -39,7 +41,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         // Claim tokens
         // Backend wallet will mint 100 new tokens to the provided address
         const claimTokens = await engine.erc20.mintTo(
-            "<chain_id>",
+            CHAIN_ID,
             TOKEN_CONTRACT_ADDRESS,
             THIRDWE_ENGINE_WALLET,
             {
@@ -51,7 +53,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         // Claim worker
         // Backend wallet will mint a new worker to the provided address
         const claimWorker = await engine.erc721.claimTo(
-            "<chain_id>",
+            CHAIN_ID,
             WORKER_CONTRACT_ADDRESS,
             THIRDWE_ENGINE_WALLET,
             {
