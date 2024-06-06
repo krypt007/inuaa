@@ -21,11 +21,11 @@ const Login = () => {
     const { isLoggedIn, isLoading } = useUser();
     const router = useRouter();
 
-    // States for loading worker status
+    // States for loading investorNFT status
     const [loadingWorkerStatus, setLoadingWorkerStatus] = useState(false);
     const [loadingStatus, setLoadingStatus] = useState("");
 
-    // Function to check if the user is a new player and claim a worker and tokens
+    // Function to check if the user is a new player and claim a investorNFT and tokens
     // If not a new player, redirect to the home page
     const checkNewPlayer = async () => {
         try {
@@ -33,19 +33,19 @@ const Login = () => {
             if(wallet instanceof SmartWallet && address && sdk) {
                 // Set the loading status to true and status message
                 setLoadingWorkerStatus(true);
-                setLoadingStatus("Checking worker balance...");
+                setLoadingStatus("Checking investorNFT balance...");
 
-                // Check if the user has a worker NFT
+                // Check if the user has a investorNFT NFT
                 const workerContract = await sdk?.getContract(WORKER_CONTRACT_ADDRESS);
                 const workerBalance = await workerContract?.erc721.balanceOf(address);
 
-                // If the user does not have a worker, claim a worker and tokens
+                // If the user does not have a investorNFT, claim a investorNFT and tokens
                 if(workerBalance?.toNumber() === 0) {
                     // Set the status message
-                    setLoadingStatus("No worker found...");
+                    setLoadingStatus("No investorNFT found...");
                     try {
-                        // Set the status message and claim the worker and tokens with Engine
-                        setLoadingStatus("Claiming worker and tokens...")
+                        // Set the status message and claim the investorNFT and tokens with Engine
+                        setLoadingStatus("Claiming investorNFT and tokens...")
                         const response = await fetch("/api/claimToken", {
                             method: "POST",
                             headers: {
@@ -70,7 +70,7 @@ const Login = () => {
                         router.push("/");
                     }
                 } else {
-                    // If the user has a worker, redirect to the home page
+                    // If the user has a investorNFT, redirect to the home page
                     setLoadingStatus("");
                     router.push("/");
                 }
@@ -78,7 +78,7 @@ const Login = () => {
                 console.error("Wallet is not a SmartWallet");
             }
         } catch (error) {
-            console.error("Error getting worker balance");
+            console.error("Error getting investorNFT balance");
             console.error(error);
         }
     };
@@ -90,7 +90,7 @@ const Login = () => {
         }
     }, [isLoggedIn, isLoading, wallet]);
 
-    // Return status message if claiming worker and tokens
+    // Return status message if claiming investorNFT and tokens
     if(loadingWorkerStatus) {
         return (
             <div className={styles.container}>
@@ -101,7 +101,7 @@ const Login = () => {
 
     return (
         <div className={styles.container}>
-            <h1>Web3 Idle Game Login</h1>
+            <h1>Inuaa Investor Login</h1>
             {showConnectEmbed && (
                 <ConnectEmbed
                     auth={{

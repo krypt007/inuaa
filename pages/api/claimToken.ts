@@ -12,16 +12,14 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     const {
         THIRDWEB_ENGINE_URL,
         THIRDWEB_ENGINE_ACCESS_TOKEN,
-        THIRDWE_ENGINE_WALLET,
+        THIRDWEB_ENGINE_WALLET,
     } = process.env;
-
-    const CHAIN_ID = "97";
 
     try {
         // Check if environment variables are set
         // If not, throw an error
-        if(!THIRDWEB_ENGINE_URL || !THIRDWEB_ENGINE_ACCESS_TOKEN || !THIRDWE_ENGINE_WALLET) {
-            throw new Error("THIRDWEB_ENGINE_URL, THIRDWEB_ENGINE_ACCESS_TOKEN, and THIRDWE_ENGINE_WALLET must be set in the environment");
+        if(!THIRDWEB_ENGINE_URL || !THIRDWEB_ENGINE_ACCESS_TOKEN || !THIRDWEB_ENGINE_WALLET) {
+            throw new Error("THIRDWEB_ENGINE_URL, THIRDWEB_ENGINE_ACCESS_TOKEN, and THIRDWEB_ENGINE_WALLET must be set in the environment");
         }
 
         // Get address from request body
@@ -31,6 +29,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         if(!address) {
             throw new Error("Address must be provided in the request body");
         }
+        console.log(address);
 
         // Create a new Engine instance
         const engine = new Engine({
@@ -41,9 +40,9 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         // Claim tokens
         // Backend wallet will mint 100 new tokens to the provided address
         const claimTokens = await engine.erc20.mintTo(
-            CHAIN_ID,
+            "97",
             TOKEN_CONTRACT_ADDRESS,
-            THIRDWE_ENGINE_WALLET,
+            THIRDWEB_ENGINE_WALLET,
             {
                 toAddress: address,
                 amount: "100",
@@ -53,9 +52,9 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         // Claim worker
         // Backend wallet will mint a new worker to the provided address
         const claimWorker = await engine.erc721.claimTo(
-            CHAIN_ID,
+            "97",
             WORKER_CONTRACT_ADDRESS,
-            THIRDWE_ENGINE_WALLET,
+            THIRDWEB_ENGINE_WALLET,
             {
                 receiver: address,
                 quantity: "1",

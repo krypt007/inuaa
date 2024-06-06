@@ -22,25 +22,31 @@ const Worker = () => {
     }
 
     return (
-        <div style={{ width: "50%"}}>
+        <div style={{ width: "40%"}}>
             {!loadingWorker ? (
                 ownedWorkers && ownedWorkers.length > 0 && (
                     ownedWorkers.map((worker) => (
                         <div className={styles.workerContainer} key={worker.metadata.id}>
                             <div>
-                                <h2>Worker Stats:</h2>
+                                <h2>Investor Stats:</h2>
                                 <MediaRenderer 
                                     key={worker.metadata.id}
                                     src={worker.metadata.image}
                                     style={{ borderRadius: "10px", margin: "10px 0px" }}
                                 />
-                            </div>
-                            <div>
+
+
                                 <p style={{ fontWeight: "bold"}}>{worker.metadata.name} - ID: #{worker.metadata.id}</p>
                                 {tokenBalance && (
                                     <p>Balance: {truncateNumber(tokenBalance?.displayValue as string)} {tokenBalance?.symbol}</p>
                                 )}
                             </div>
+                            {/* <div>
+                                <p style={{ fontWeight: "bold"}}>{worker.metadata.name} - ID: #{worker.metadata.id}</p>
+                                {tokenBalance && (
+                                    <p>Balance: {truncateNumber(tokenBalance?.displayValue as string)} {tokenBalance?.symbol}</p>
+                                )}
+                            </div> */}
                         </div>
                     ))
                 )

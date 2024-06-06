@@ -28,7 +28,7 @@ const Businesses = () => {
                                     tokenId={stakedToken.toNumber()}
                                 />
                             )) : (
-                                <p>No businesses started.</p>
+                                <p>No Invested businesses.</p>
                             )
                         }
                     </div>
