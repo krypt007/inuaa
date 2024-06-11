@@ -21,13 +21,13 @@ const Navbar = () => {
         <div className={styles.navbarContainer}>
             {address && (
                 <>
-                    <h1>Inuaa Investment Dapp</h1>
+                    <h1>INUAA</h1>
                     <div className={styles.navbarOptions}>
                         <Link href="/">
-                            <p>Businesses</p>
+                            <p>My Investments</p>
                         </Link>
                         <Link href="/shop">
-                            <p>Shop</p>
+                            <p>Marketplace</p>
                         </Link>
                     </div>
                     <div className={styles.navbarOptions}>

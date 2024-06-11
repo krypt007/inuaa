@@ -39,6 +39,8 @@ const Login = () => {
                 const workerContract = await sdk?.getContract(WORKER_CONTRACT_ADDRESS);
                 const workerBalance = await workerContract?.erc721.balanceOf(address);
 
+                // console.log("Wallet: ", address);
+
                 // If the user does not have a investorNFT, claim a investorNFT and tokens
                 if(workerBalance?.toNumber() === 0) {
                     // Set the status message
