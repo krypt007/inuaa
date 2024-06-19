@@ -5,9 +5,13 @@ import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import MainButton from "./MainButton";
 
+
+import { useActiveAccount } from "thirdweb/react";
+// import { LoginButton } from "@/app/consts/LoginButton";
+
 function NavBar() {
   const [menu, setMenu] = useState(false);
-  const links = ["Buy / Sell", "Grow", "Markets", "Business", "Support"];
+  const links = ["My Businesses", "Invest", "Add Business"];
   const toggleMenu = () => {
     setMenu(!menu);
   };
@@ -41,6 +45,7 @@ function NavBar() {
             >
               
             </MainButton>
+            {/* <LoginButton /> */}
           </div>
         </div>
       </div>
