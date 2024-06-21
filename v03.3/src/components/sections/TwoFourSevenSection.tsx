@@ -7,8 +7,8 @@ function TwoFourSevenSection() {
       <div className="hidden md:block">
         <img src="/images/big_left_section.png" alt="security badge" />
       </div>
-      <div className="mt-4 px-4 md:px-[130px]">
-        <p className="text-[2rem] md:text-[50px] font-bold">
+      <div className="mt-4 px-4 md:px-[80px]">
+        <p className="text-[2rem] md:text-[40px] font-bold">
           24/7 access to full service customer support
         </p>
         <p className="text-subtitle mt-4 mb-[32px]">
@@ -16,10 +16,10 @@ function TwoFourSevenSection() {
           support from real people is a click away, whenever you need it.
         </p>
         <div>
-          <MainButton
-            text="Get Started"
+          {/* <MainButton
+            text="Get Started4"
             classes="bg-transparent  hover:bg-transparent border-[2px] border-white rounded-[10px] font-semibold w-[156px] h-[56px]"
-          />
+          /> */}
         </div>
       </div>
     </section>

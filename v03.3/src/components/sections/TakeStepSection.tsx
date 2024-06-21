@@ -3,6 +3,7 @@
 import React from "react";
 import MainButton from "../common/MainButton";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 function TakeStepSection() {
   return (
@@ -13,7 +14,7 @@ function TakeStepSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.2, y: 0 }}
           viewport={{ once: false }}
-          className="text-[2rem] md:text-[50px] font-bold"
+          className="text-[2rem] md:text-[40px] font-bold"
         >
           Take your first step into safe, secure Fractional investing
         </motion.p>
@@ -37,7 +38,8 @@ function TakeStepSection() {
           <MainButton
             text="Get Started"
             classes="bg-transparent primary-gradient  hover:bg-transparent rounded-[10px] font-semibold w-[156px] h-[56px]"
-          />
+            action={()=>{<Link href={"/"} />}}
+          ></MainButton>
         </motion.div>
       </div>
       <motion.div

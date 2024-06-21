@@ -11,21 +11,21 @@ function FeatureSection() {
       iconUrl: "/images/f_1.png",
       text: "Real Estate",
       description:
-        "Invest in crypto anytime, anywhere with our safe, secure, and easy to use online platform",
+        "Invest in Real Estate anytime, anywhere with our safe, secure, and easy to use online platform",
       linkText: "Get Started",
     },
     {
       iconUrl: "/images/f_2.png",
       text: "Startups",
       description:
-        "We have thousands of ATMs located across the U.S. where you can easily convert cash to crypto",
+        "We have thousands of Businesses Looking for Investors. where you can safely invest your capital",
       linkText: "Invest in shares",
     },
     {
       iconUrl: "/images/f_3.png",
       text: "Farms",
       description:
-        "Store your growing investments in our non-custodial wallet that gives you access to a full suite of DeFi services in one place",
+        "Invest in agricultural businesses where you can obtain a decent return at the end of each harvest cycle",
       linkText: "Own a share of the farm",
     },
   ];
