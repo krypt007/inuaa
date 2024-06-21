@@ -8,14 +8,33 @@ import MainButton from "./MainButton";
 
 // import { useActiveAccount } from "thirdweb/react";
 import type { NextPage } from "next";
-import { ConnectButton } from "thirdweb/react";
 import { client } from "@/app/consts/client";
-// import {
-//   generatePayload,
-//   isLoggedIn,
-//   login,
-//   logout,
-// } from "@/app/actions/auth";
+
+
+import {
+  ThirdwebProvider, ConnectButton,} from "thirdweb/react";
+import { bscTestnet } from "thirdweb/chains";
+import {  createWallet,  inAppWallet,} from "thirdweb/wallets";
+
+// const client = createThirdwebClient({
+//   clientId: "YOUR_CLIENT_ID",
+// });
+
+const wallets = [
+  createWallet("io.metamask"),
+  inAppWallet({
+    auth: {
+      options: [
+        "email",
+        "google",
+        "apple",
+        "facebook",
+        "phone",
+      ],
+    },
+  }),
+  createWallet("me.rainbow"),
+];
 
 function NavBar() {
   const [menu, setMenu] = useState(false);
@@ -69,23 +88,19 @@ function NavBar() {
             /> */}
             <ConnectButton
               client={client}
-
-              // auth={{
-              //   isLoggedIn: async (address) => {
-              //     console.log("checking if logged in!", { address });
-              //     return await isLoggedIn();
-              //   },
-              //   doLogin: async (params) => {
-              //     console.log("logging in!");
-              //     await login(params);
-              //   },
-              //   getLoginPayload: async ({ address }) =>
-              //     generatePayload({ address }),
-              //   doLogout: async () => {
-              //     console.log("logging out!");
-              //     await logout();
-              //   },
-              // }}
+              wallets={wallets}
+              accountAbstraction={{
+                chain: bscTestnet,
+                factoryAddress: process.env.NEXT_PUBLIC_BSC_TESTNET_FACTORY_ADDRESS,
+                gasless: true,
+              }}
+              theme={"dark"}
+              connectButton={{ label: "Login" }}
+              connectModal={{
+                size: "wide",
+                title: "Select to Login",
+                showThirdwebBranding: false,
+              }}
             />
           </div>
         </div>
