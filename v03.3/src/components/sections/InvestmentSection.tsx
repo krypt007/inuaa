@@ -36,7 +36,7 @@ function InvestmentSection() {
         viewport={{ once: false }}
       >
         <MainButton
-          text="Get Started1"
+          text="Get Started"
           classes="primary-gradient border-gradient rounded-[10px] font-semibold w-[156px] h-[56px]"
         />
       </motion.div>

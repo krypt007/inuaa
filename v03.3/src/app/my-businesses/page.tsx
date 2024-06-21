@@ -12,7 +12,7 @@ import { isLoggedIn } from "@/app/actions/auth";
 
 export default async function MyBusinesses() {
   if (!(await isLoggedIn())) {
-    redirect("/connect-button");
+    redirect("/");
   }
   return (
     <main className="bg-customDark">
