@@ -133,14 +133,30 @@ function NavBar() {
         {menu ? (
           <div className="my-8 select-none animate-in slide-in-from-right">
             <div className="flex flex-col gap-8 mt-8 mx-4">
-              {links.map((link, index) => (
+              <Link href="/my-businesses">
                 <p
-                  className={`hover:text-white cursor-pointer flex items-center gap-2  font-[500] text-white`}
-                  key={index}
+                  className={`hover:text-primary cursor-pointer flex items-center gap-2  font-[500] text-white`}
+                  
                 >
-                  {link}
+                  {"My Businesses"}
                 </p>
-              ))}
+              </Link>
+              <Link href="/#">
+                <p
+                  className={`hover:text-primary cursor-pointer flex items-center gap-2  font-[500] text-white`}
+                  
+                >
+                  {"Invest"}
+                </p>
+              </Link>
+              <Link href="/#">
+                <p
+                  className={`hover:text-primary cursor-pointer flex items-center gap-2  font-[500] text-white`}
+                  
+                >
+                  {"Add Business"}
+                </p>
+              </Link>
               <div className="flex flex-col gap-[12px] select-none">
                 {/* <MainButton
                   text={"Sign in"}
@@ -152,21 +168,18 @@ function NavBar() {
                 /> */}
                 <ConnectButton
                   client={client}
-                  auth={{
-                    isLoggedIn: async (address) => {
-                      console.log("checking if logged in!", { address });
-                      return await isLoggedIn();
-                    },
-                    doLogin: async (params) => {
-                      console.log("logging in!");
-                      await login(params);
-                    },
-                    getLoginPayload: async ({ address }) =>
-                      generatePayload({ address }),
-                    doLogout: async () => {
-                      console.log("logging out!");
-                      await logout();
-                    },
+                  wallets={wallets}
+                  accountAbstraction={{
+                    chain: bscTestnet,
+                    factoryAddress: process.env.NEXT_PUBLIC_BSC_TESTNET_FACTORY_ADDRESS,
+                    gasless: true,
+                  }}
+                  theme={"dark"}
+                  connectButton={{ label: "Login" }}
+                  connectModal={{
+                    size: "wide",
+                    title: "Select to Login",
+                    showThirdwebBranding: false,
                   }}
                 />
               </div>
