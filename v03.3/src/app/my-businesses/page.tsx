@@ -7,7 +7,13 @@ import ReceiveTransmission from "@/components/sections/ReceiveTransmissionSectio
 import TakeStepSection from "@/components/sections/TakeStepSection";
 import TwoFourSevenSection from "@/components/sections/TwoFourSevenSection";
 
-export default function Home() {
+import { redirect } from "next/navigation";
+import { isLoggedIn } from "@/app/actions/auth";
+
+export default async function MyBusinesses() {
+  if (!(await isLoggedIn())) {
+    redirect("/connect-button");
+  }
   return (
     <main className="bg-customDark">
       <NavBar />
