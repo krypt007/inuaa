@@ -9,6 +9,6 @@ if (!privateKey) {
 }
 
 export const thirdwebAuth = createAuth({
-  domain: process.env.NEXT_PUBLIC_THIRDWEB_AUTH_DOMAIN || "",
+  domain: process.env.NEXT_PUBLIC_THIRDWEB_AUTH_DOMAIN || "" || "inuaa-prod.vercel.app",
   adminAccount: privateKeyToAccount({ client, privateKey }),
 });
