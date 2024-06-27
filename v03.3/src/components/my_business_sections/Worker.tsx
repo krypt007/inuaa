@@ -46,7 +46,7 @@ const Worker = async () => {
 
     return (
         <div style={{ width: "50%"}}>
-            {!loadingWorker ? (
+            {/* {!loadingWorker ? (
                 ownedWorkers && ownedWorkers.length > 0 && (
                     ownedWorkers.map((worker) => (
                         <div className={styles.workerContainer} key={worker.metadata.id}>
@@ -69,7 +69,7 @@ const Worker = async () => {
                 )
             ) : (
                 <p>Loading worker...</p>
-            )}
+            )} */}
         </div>
     )
 };
