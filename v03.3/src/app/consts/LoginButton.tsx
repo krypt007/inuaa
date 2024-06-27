@@ -2,7 +2,7 @@
 
 import { ConnectButton } from "thirdweb/react";
 import { client } from "./client";
-import { generatePayload, isLoggedIn, login, logout } from "@/app/actions/auth"; 
+import { generatePayload, isLoggedIn, login, logout } from "../actions/auth";
 
 export const LoginButton = () => {
   return (

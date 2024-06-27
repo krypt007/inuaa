@@ -1,6 +1,6 @@
 import { getContract } from "thirdweb";
 import { avalancheFuji } from "thirdweb/chains";
-import { client } from "@/app/consts/client";
+import { client } from "../consts/client";
 import { balanceOf as balanceOfERC721 } from "thirdweb/extensions/erc721";
 import { balanceOf as balanceOfERC20 } from "thirdweb/extensions/erc20";
 
@@ -30,7 +30,7 @@ export async function hasAccess(address: string): Promise<boolean> {
  */
 
 async function example_hasSomeErc721Tokens(address: string) {
-  const requiredQuantity = 1 // n;
+  const requiredQuantity = 1n;
 
   const erc721Contract = getContract({
     // replace with your own NFT contract address
@@ -54,7 +54,7 @@ async function example_hasSomeErc721Tokens(address: string) {
 }
 
 async function example_hasSomeErc20Tokens(address: string) {
-  const requiredQuantity = 10 // n; // 10 erc20 token
+  const requiredQuantity = 10n; // 10 erc20 token
 
   const erc20Contract = getContract({
     // replace with your own erc20 contract address

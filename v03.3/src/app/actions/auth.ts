@@ -1,7 +1,7 @@
 "use server";
 import { VerifyLoginPayloadParams } from "thirdweb/auth";
 import { cookies } from "next/headers";
-import { thirdwebAuth } from "@/app/consts/thirdwebAuth"; 
+import { thirdwebAuth } from "../consts/thirdwebAuth";
 
 export const generatePayload = thirdwebAuth.generatePayload;
 

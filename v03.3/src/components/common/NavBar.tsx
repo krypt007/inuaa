@@ -11,8 +11,7 @@ import type { NextPage } from "next";
 import { client } from "@/app/consts/client";
 
 
-import {
-  ThirdwebProvider, ConnectButton,} from "thirdweb/react";
+import { ThirdwebProvider, ConnectButton,} from "thirdweb/react";
 import { bscTestnet } from "thirdweb/chains";
 import {  createWallet,  inAppWallet,} from "thirdweb/wallets";
 
