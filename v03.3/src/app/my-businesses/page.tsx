@@ -37,7 +37,7 @@ export default async function MyBusinesses() {
   return (
     <main className="bg-customDark">
       <NavBar />
-      <HeroSection />
+      {/* <HeroSection /> */}
       
       <GatedContent />
 
