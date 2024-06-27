@@ -1,15 +1,15 @@
 import NavBar from "@/components/common/NavBar";
 import FooterSection from "@/components/sections/FooterSection";
-import HeroSection from "@/components/my_business_sections/HeroSection";
+// import HeroSection from "@/components/my_business_sections/HeroSection";
 
-import { cookies } from "next/headers";
-import { thirdwebAuth } from "../consts/thirdwebAuth";
+// import { cookies } from "next/headers";
+// import { thirdwebAuth } from "../consts/thirdwebAuth";
 // import { hasAccess } from "../actions/gate-condition";
 // import { GatedContent } from "./GatedContent";
 
-import { useActiveAccount } from "thirdweb/react";
+// import { useActiveAccount } from "thirdweb/react";
 
-import { redirect } from "next/navigation";
+// import { redirect } from "next/navigation";
 // import { isLoggedIn } from "@/app/actions/auth";
 // import { authedOnly } from "@/app/actions/auth";
 
