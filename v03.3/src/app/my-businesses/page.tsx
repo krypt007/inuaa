@@ -5,7 +5,7 @@ import HeroSection from "@/components/my_business_sections/HeroSection";
 import { cookies } from "next/headers";
 import { thirdwebAuth } from "../consts/thirdwebAuth";
 // import { hasAccess } from "../actions/gate-condition";
-import { GatedContent } from "./GatedContent";
+// import { GatedContent } from "./GatedContent";
 
 import { useActiveAccount } from "thirdweb/react";
 
@@ -39,7 +39,7 @@ export default async function MyBusinesses() {
       <NavBar />
       {/* <HeroSection /> */}
       
-      <GatedContent />
+      {/* <GatedContent /> */}
 
       <FooterSection />
     </main>
