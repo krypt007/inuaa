@@ -29,6 +29,7 @@ const wallets = [
         "apple",
         "facebook",
         "phone",
+        "passkey",
       ],
     },
   }),
@@ -96,7 +97,7 @@ function NavBar() {
               theme={"dark"}
               connectButton={{ label: "Login" }}
               connectModal={{
-                size: "wide",
+                size: "compact",
                 title: "Select to Login",
                 showThirdwebBranding: false,
               }}
